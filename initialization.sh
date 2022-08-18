@@ -194,8 +194,8 @@ chmod 660 /var/log/history/${LOGNAME}/*history* 2>/dev/null' >> /etc/profile
     docker-ce-rootless-extras-20.10.16-3.el7.x86_64
 
     mkdir -p /etc/docker/
-    touch /etc/docker/daemon.json
-    printf "{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}" > /etc/docker/daemon.json
+    touch /etc/docker/daemon.conf
+    printf "{\n "registry-mirrors": ["https://registry.docker-cn.com"] \n}" > /etc/docker/daemon.conf
     systemctl daemon-reload
     systemctl start docker
     systemctl enable docker
